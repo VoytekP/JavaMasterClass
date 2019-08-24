@@ -3,62 +3,68 @@ package academy.learnprogramming;
 public class Main {
 
     public static void main(String[] args) {
-//        int value = 3;
-//        if (value == 1) {
-//            System.out.println("Value was 1");
-//        } else if (value == 2) {
-//            System.out.println("Value was 2");
-//        } else {
-//            System.out.println("Was not 1 or 2");
-//        }
 
-//        int switchValue = 5;
-//        switch(switchValue) {
+        printDayOfTheWeek(0);
+        printDayOfTheWeek(1);
+        printDayOfTheWeek(2);
+        printDayOfTheWeek(3);
+        printDayOfTheWeek(4);
+        printDayOfTheWeek(5);
+        printDayOfTheWeek(6);
+        printDayOfTheWeek(7);
+
+    }
+//
+//    private static void printDayOfTheWeek(int day) {
+//
+//        switch (day) {
 //            case 1:
-//                System.out.println("Value was 1");
+//                System.out.println("Sunday");
 //                break;
 //            case 2:
-//                System.out.println("Value was 2");
+//                System.out.println("Monday");
 //                break;
-//            case 3: case 4: case 5:
-//                System.out.println("wasn't a 3 or a 4, or a 5");
-//                System.out.println("Actually it was a " + switchValue);
+//            case 3:
+//                System.out.println("Tuesday");
 //                break;
-//
-//            default:
-//                System.out.println("Was not 1 or 2");
+//            case 4:
+//                System.out.println("Wednesday");
 //                break;
-//        }
-
-//        char switchValue2 = 'A';
-//        switch(switchValue2) {
-//            case 'A':
-//                System.out.println("Value was A");
+//            case 5:
+//                System.out.println("Thursday");
 //                break;
-//            case 'B':
-//                System.out.println("Value was B");
+//            case 6:
+//                System.out.println("Friday");
 //                break;
-//            case 'C': case 'D': case 'E':
-//                System.out.println("Value was " + switchValue2);
+//            case 7:
+//                System.out.println("Saturday");
 //                break;
 //
 //            default:
-//                System.out.println("Value not found");
+//                System.out.println("Invalid entry");
 //                break;
-//
 //        }
+//    }
 
-        String month = "JANUARY";
-        switch (month.toLowerCase()) {
-            case "January":
-                System.out.println("Jan");
-                break;
-            case "June":
-                System.out.println("Jun");
-                break;
-            default:
-                System.out.println("Not sure");
-                break;
+    private static void printDayOfTheWeek(int day) {
+
+        if (day == 0) {
+            System.out.println("Sunday");
+        } else if (day ==1) {
+            System.out.println("Monday");
+        } else if (day ==2) {
+            System.out.println("Tuesday");
+        } else if (day ==3) {
+            System.out.println("Wednesday");
+        } else if (day ==4) {
+            System.out.println("Thursday");
+        } else if (day ==5) {
+            System.out.println("Friday");
+        } else if (day ==6) {
+            System.out.println("Saturday");
+        } else  {
+            System.out.println("Invalid day");
         }
+
     }
 }
