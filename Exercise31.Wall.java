@@ -1,8 +1,16 @@
-public void withdraw(double withdrawAmount) {
-        if (this.balance - withdrawAmount < 0) {
-            System.out.println("Only " + this.balance + " available. Withdrawal not processed");
-        } else {
-            balance -= withdrawAmount;
-            System.out.println("Withdrawal of " + withdrawAmount + " processed. Remaining balance = " + this.balance);
-        }
+package academy.learnprogramming;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Wall wall = new Wall(5,4);
+        System.out.println("area= " + wall.getArea());
+
+        wall.setHeight(-1.5);
+        System.out.println("width= " + wall.getWidth());
+        System.out.println("height= " + wall.getHeight());
+        System.out.println("area= " + wall.getArea());
+        // write your code here
     }
+}
