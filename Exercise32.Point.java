@@ -5,6 +5,8 @@ public class Point {
     private int x;
     private int y;
 
+    // Constructors
+
     public Point() {
     }
 
@@ -12,6 +14,8 @@ public class Point {
         this.x = x;
         this.y = y;
     }
+
+    // Getter & Setter
 
     public int getX() {
         return x;
@@ -21,13 +25,15 @@ public class Point {
         return y;
     }
 
-    public int setX(int x) {
-        return x;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public int setY(int y) {
-        return y;
+    public void setY(int y) {
+        this.y = y;
     }
+
+    // methods
 
     public double distance() {
         return distance(0,0);
