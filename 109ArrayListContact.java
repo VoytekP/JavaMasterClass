@@ -1,4 +1,4 @@
-package com.timbuchalka;
+package academy.learnprogramming;
 
 public class Contact {
     private String name;
