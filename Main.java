@@ -1,64 +1,113 @@
-package academy.learnprogramming;
+package com.timbuchalka;
+
+import com.example.game.ISaveable;
+import com.example.game.Monster;
+import com.example.game.Player;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-//        int value = 3;
-//        if (value == 1) {
-//            System.out.println("Value was 1");
-//        } else if (value == 2) {
-//            System.out.println("Value was 2");
-//        } else {
-//            System.out.println("Was not 1 or 2");
-//        }
+        // Create a simple interface that allows an object to be saved to some sort of storage medium.
+        // The exact type of medium is not known to the interface (nor to the classes that implement it).
+        // The interface will just specify 2 methods, one to return an ArrayList of values to be saved
+        // and the other to populate the object's fields from an ArrayList.
+        //
+        // Create some sample classes that implement your saveable interface (we've used the idea of a game,
+        // with Players and Monsters, but you can create any type of classes that you want).
+        //
+        // Override the toString() method for each of your classes so that they can be easily printed to enable
+        // the program to be tested easier.
+        //
+        // In Main, write a method that takes an object that implements the interface as a parameter and
+        // "saves" the values.
+        // We haven't covered I/O yet, so your method should just print the values to the screen.
+        // Also in Main, write a method that restores the values to a saveable object.
+        // Again, we are not going to use Java file I/O; instead use the readValues() method below to
+        // simulate getting values from a file – this allows you to type as many values as your class
+        // requires, and returns an ArrayList.
 
-//        int switchValue = 5;
-//        switch(switchValue) {
-//            case 1:
-//                System.out.println("Value was 1");
-//                break;
-//            case 2:
-//                System.out.println("Value was 2");
-//                break;
-//            case 3: case 4: case 5:
-//                System.out.println("wasn't a 3 or a 4, or a 5");
-//                System.out.println("Actually it was a " + switchValue);
-//                break;
-//
-//            default:
-//                System.out.println("Was not 1 or 2");
-//                break;
-//        }
+        Player tim = new Player("Tim", 10, 15);
+        System.out.println(tim.toString());
+        saveObject(tim);
 
-//        char switchValue2 = 'A';
-//        switch(switchValue2) {
-//            case 'A':
-//                System.out.println("Value was A");
-//                break;
-//            case 'B':
-//                System.out.println("Value was B");
-//                break;
-//            case 'C': case 'D': case 'E':
-//                System.out.println("Value was " + switchValue2);
-//                break;
-//
-//            default:
-//                System.out.println("Value not found");
-//                break;
-//
-//        }
+        tim.setHitPoints(8);
+        System.out.println(tim);
+        tim.setWeapon("Stormbringer");
+        saveObject(tim);
+//        loadObject(tim);
+        System.out.println(tim);
 
-        String month = "JANUARY";
-        switch (month.toLowerCase()) {
-            case "January":
-                System.out.println("Jan");
-                break;
-            case "June":
-                System.out.println("Jun");
-                break;
-            default:
-                System.out.println("Not sure");
-                break;
+        ISaveable werewolf = new Monster("Werewolf", 20, 40);
+        System.out.println("Strength = " + ((Monster) werewolf).getStrength());
+        saveObject(werewolf);
+
+    }
+
+    public static ArrayList<String> readValues() {
+        ArrayList<String> values = new ArrayList<String>();
+
+        Scanner scanner = new Scanner(System.in);
+        boolean quit = false;
+        int index = 0;
+        System.out.println("Choose\n" +
+                "1 to enter a string\n" +
+                "0 to quit");
+
+        while (!quit) {
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 0:
+                    quit = true;
+                    break;
+                case 1:
+                    System.out.print("Enter a string: ");
+                    String stringInput = scanner.nextLine();
+                    values.add(index, stringInput);
+                    index++;
+                    break;
+            }
+        }
+        return values;
+    }
+
+    public static void saveObject(ISaveable objectToSave) {
+        for(int i=0; i<objectToSave.write().size(); i++) {
+            System.out.println("Saving " + objectToSave.write().get(i) + " to storage device");
         }
     }
+
+    public static void loadObject(ISaveable objectToLoad) {
+        ArrayList<String> values = readValues();
+        objectToLoad.read(values);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
