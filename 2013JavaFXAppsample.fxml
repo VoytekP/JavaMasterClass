@@ -1,0 +1,24 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Label?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+          stylesheets="@styles.css" fx:id="gridPane">
+
+    <Button text="Open..." onAction="#handleClick" id="button_one" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+
+    <Button text="Button Two" id="button_two" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Button text="Button Three" id="button_three" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+    <Button text="Button Four" id="button_four" GridPane.rowIndex="0" GridPane.columnIndex="3"
+            fx:id="button4" />
+    <Button text="Button Five" id="button_five" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+
+    <RadioButton text="Choice 1" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Label text="JavaFX Effects" fx:id="label" GridPane.rowIndex="1" GridPane.columnIndex="1"
+        onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit"/>
+
+</GridPane>

@@ -1,0 +1,24 @@
+#button_one {
+    -fx-background-color: blue;
+    -fx-text-fill: white;
+}
+
+#button_two {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+}
+
+#button_three {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+
+#button_four {
+    -fx-background-color: blue;
+    -fx-text-fill: white;
+}
+
+#button_five {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+}
