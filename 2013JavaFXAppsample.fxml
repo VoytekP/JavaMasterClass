@@ -3,6 +3,8 @@
 
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.web.WebView?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
           stylesheets="@styles.css" fx:id="gridPane">
@@ -20,5 +22,9 @@
     <RadioButton text="Choice 1" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
     <Label text="JavaFX Effects" fx:id="label" GridPane.rowIndex="1" GridPane.columnIndex="1"
         onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit"/>
+
+    <Hyperlink text="www.javafx.com" GridPane.rowIndex="3" GridPane.columnIndex="0" onAction="#handleLinkClick"/>
+
+    <WebView fx:id="webView" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowSpan="3"/>
 
 </GridPane>
